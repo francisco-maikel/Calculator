@@ -61,6 +61,15 @@ header h1 {
   color: var(--button-text-color);
 }
 
+.expression::after {
+  content: "|";
+  position: absolute;
+  bottom: -0.1rem;
+  right: -1.2rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  animation: blink 1s infinite;
+}
+
 .expressionDisplay {
   position: absolute;
   bottom: 4.8rem;
@@ -116,4 +125,52 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+@keyframes blink {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .calculator {
+    padding: 4.2rem;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+  }
+
+  .screen {
+    width: 60vw;
+    height: 27rem;
+  }
+
+  .expression::after {
+    bottom: 2.4rem;
+    right: 4.2rem;
+  }
+
+  .expressionDisplay {
+    bottom: 7.2rem;
+    right: 4.2rem;
+  }
+
+  .gridButtons {
+    grid-template-rows: repeat(5, 4.75rem);
+    margin-top: 3.2rem;
+  }
+
+  footer {
+    margin-top: 4.2rem;
+  }
 }
