@@ -134,7 +134,6 @@ header h1 {
 
 .buttonClearHistory {
   cursor: pointer
-  
 }
 
 .screen {
@@ -237,12 +236,57 @@ footer a:hover {
     padding: 4.2rem;
   }
 
+  .buttonHistory img{
+   width: 2.4rem;
+  }
+
   main {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3.2rem;
   }
+
+  .modalHistory {
+    width: 56rem;
+    height: 42rem;
+    padding: 2.4rem 1.6rem 0.4rem;
+    margin: 7% auto;
+  }
+
+  .buttonCloseModal {
+    top: 2.4rem;
+    left: .4rem;
+    font-size: 1.2rem;
+  }
+
+  .containerHistory {
+    padding: 1.2rem 1.2rem 0;
+  }
+
+  .boxHistory {
+    margin-top: 2rem;
+  }
+
+  .buttonClearHistory {
+    font-size: 1.2rem;
+  }
+
+  ::-webkit-scrollbar{
+    width: 0.6rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+   background: var(--button-number-color);
+   border-radius: 8px;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+   }
 
   .screen {
     width: 60vw;
