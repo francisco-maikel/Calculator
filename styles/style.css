@@ -45,7 +45,6 @@ header {
 }
 
 header h1 {
-  margin-top: 1.6rem;
   font-size: clamp(1.4rem, 3vw, 2.4rem);
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -73,7 +72,7 @@ header h1 {
   height: 42rem;
   padding: 1.6rem 0.8rem 0rem;
   margin: 35% auto;
-  box-shadow: inset 0 0 12px 12px 1px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 12px 1px rgba(0, 0, 0, 0.8);
   text-align: center;
 }
 
@@ -93,7 +92,7 @@ header h1 {
 }
 
 .buttonCloseModal:hover {
-  cursor:pointer;
+  cursor: pointer;
   transform: scale(1.1);
 }
 
@@ -117,23 +116,25 @@ header h1 {
 }
 
 .resultHistory {
-  font-size: clamp(1.2rem, 2vw, 11.6rem);
-  color: var(--button-number-color);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--button-text-color);
   margin-top: 0.8rem;
 }
 
 .buttonClearHistory {
   border: transparent;
   background: #66666622;
+  color: var(--button-text-color);
   font-size: 1rem;
   width: 12rem;
-  margin-top: 1.2rem auto;
+  margin: 1.2rem auto;
   border-radius: 8px;
   padding: 0.8rem;
 }
 
-.buttonClearHistory {
-  cursor: pointer
+.buttonClearHistory:hover {
+  cursor: pointer;
+  background: #66666633;
 }
 
 .screen {
@@ -225,6 +226,7 @@ footer a:hover {
   60% {
     opacity: 1;
   }
+
   61%,
   100% {
     opacity: 0;
@@ -236,15 +238,8 @@ footer a:hover {
     padding: 4.2rem;
   }
 
-  .buttonHistory img{
-   width: 2.4rem;
-  }
-
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3.2rem;
+  .buttonHistory img {
+    width: 2.4rem;
   }
 
   .modalHistory {
@@ -256,7 +251,7 @@ footer a:hover {
 
   .buttonCloseModal {
     top: 2.4rem;
-    left: .4rem;
+    left: 2.4rem;
     font-size: 1.2rem;
   }
 
@@ -272,13 +267,17 @@ footer a:hover {
     font-size: 1.2rem;
   }
 
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     width: 0.6rem;
   }
 
   ::-webkit-scrollbar-thumb {
-   background: var(--button-number-color);
-   border-radius: 8px;
+    background: var(--button-number-color);
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--button-text-color);
   }
 
   main {
@@ -286,16 +285,21 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     gap: 3.2rem;
-   }
+  }
 
   .screen {
     width: 60vw;
     height: 27rem;
   }
 
-  .expression::after {
+  .expression {
     bottom: 2.4rem;
     right: 4.2rem;
+  }
+
+  .expression::after {
+    bottom: -0.25rem;
+    right: -1.75rem;
   }
 
   .expressionDisplay {
