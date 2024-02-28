@@ -16,6 +16,20 @@ buttonCloseModal.addEventListener("click", () => {
   modalHistory.close();
 });
 
+buttonClearHistory.addEventListener("click", () => {
+  const calculatorHistory = JSON.parse(
+    localStorage.getItem("@calculator:history")
+  );
+
+  if (calculatorHistory) {
+    const responseToClear = confirm("Deseja limpar histórico?");
+    if (responseToClear) {
+      localStorage.removeItem("@calculator:history");
+      updateHistory();
+    }
+  }
+});
+
 function clreanScreen() {
   expression.innerHTML = "";
   expressionDisplay.innerHTML = "";
@@ -27,7 +41,7 @@ function updateHistory() {
   );
   containerHistory.innerHTML = "";
   if (calculatorHistory) {
-    calculatorHistory.forEach((value) => {
+    calculatorHistory.reverse().forEach((value) => {
       containerHistory.innerHTML += `
         <div class="boxHistory">
           <div class="expressionHistory">${value.expression}</div>
